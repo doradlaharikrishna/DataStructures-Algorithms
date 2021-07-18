@@ -32,13 +32,13 @@ class Solution {
 public:
     int countNegatives(vector<vector<int>>& grid) {
         int count = 0;
-        int i = 0, j = grid[0].size()-1;
-        while(i < grid.size() && j >=0){
-            if(grid[i][j] < 0){ // if a grid[i][j] value is < 0 then all the below elements in the same column will also be < 0 as it is in decreasing order
-                count = count + grid.size() - i; // (grid.size() - i) this counts the no of negative values
-                j--;
+        int row = 0, column = grid[0].size()-1;
+        while(row < grid.size() && column >=0){
+            if(grid[row][column] < 0){ // if a grid[i][j] value is < 0 then all the below elements in the same column will also be < 0 as it is in decreasing order
+                count = count + grid.size() - row; // (grid.size() - i) this counts the no of negative values
+                column--;
             }else{
-                i++; // if a grid[i][j] is >=0 then all left side values will be >=0 due to decreasing order condition then we shift to new row.
+                row++; // if a grid[i][j] is >=0 then all left side values will be >=0 due to decreasing order condition then we shift to new row.
             }
         }
         return count;
