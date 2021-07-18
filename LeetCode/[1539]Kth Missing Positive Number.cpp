@@ -31,6 +31,8 @@ public:
         vector<int> missing;
         int temp = 1;
         for(int i=0;i<arr.size();i++){
+            if(missing.size() == k)
+                break;
             while(temp < arr[i]){
                 missing.push_back(temp);
                 temp++;
@@ -45,3 +47,5 @@ public:
         return missing[k-1];
     }
 };
+
+// Complexity: Time => O(k), Space => O(1)
