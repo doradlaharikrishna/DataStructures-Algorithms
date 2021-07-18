@@ -1,4 +1,4 @@
-/*
+/**
 Question:
 
 Given a non-negative integer x, compute and return the square root of x.
